@@ -16,7 +16,7 @@ Add `gem "vidibus-gem_template"` to the Gemfile of your application. Then call `
 To utilize this gem template, just clone it into your new gem's directory by calling:
 
 ```
-git clone git@github.com:vidibus/vidibus-gem_template.git vidibus-my_cool_gem`
+git clone git@github.com:vidibus/vidibus-gem_template.git vidibus-my_cool_gem
 ```
 
 
