@@ -1,12 +1,12 @@
+$:.unshift File.expand_path('../lib/', __FILE__)
+
 require 'bundler'
 require 'rdoc/task'
 require 'rspec'
 require 'rspec/core/rake_task'
+require 'vidibus/gem_template/version'
 
 Bundler::GemHelper.install_tasks
-
-$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-require 'vidibus/gem_template/version'
 
 RSpec::Core::RakeTask.new(:rcov) do |t|
   t.pattern = 'spec/**/*_spec.rb'
