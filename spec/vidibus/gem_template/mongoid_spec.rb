@@ -7,7 +7,7 @@ describe Vidibus::GemTemplate::Mongoid do
     it 'should pass with valid attributes' do
       anna.should be_valid
     end
-    
+
     it 'should fail without a name' do
       anna.name = nil
       anna.should be_invalid
@@ -19,7 +19,7 @@ describe Vidibus::GemTemplate::Mongoid do
       anna.shout.should eql('Yay!')
     end
   end
-  
+
   describe '.species' do
     it 'should be human' do
       Model.species.should eql('human')
