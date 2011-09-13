@@ -9,6 +9,8 @@ Mongoid.configure do |config|
   name = 'vidibus-gem_template_test'
   host = 'localhost'
   config.master = Mongo::Connection.new.db(name)
+  # Display MongoDB logs for debugging:
+  # config.master = Mongo::Connection.new("localhost", 27017, :logger => Logger.new($stdout, :info)).db(name)
   config.logger = nil
 end
 
