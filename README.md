@@ -13,12 +13,13 @@ This gem is part of [Vidibus](http://vidibus.org), an open source toolset for bu
 
 Add `gem 'vidibus-gem_template'` to the Gemfile of your application. Then call `bundle install` on your console.
 
-To utilize this gem template, just clone it into your new gem's directory by calling:
+To utilize this gem template, clone it into your new gem's directory by calling:
 
 ```
 git clone git@github.com:vidibus/vidibus-gem_template.git vidibus-my_cool_gem
 ```
 
+TODO: Write a console tool to rename all files.
 
 
 ## Usage
