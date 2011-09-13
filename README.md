@@ -11,7 +11,7 @@ This gem is part of [Vidibus](http://vidibus.org), an open source toolset for bu
 
 **TODO:** This is the default installation note. Adjust it to your needs:
 
-Add `gem "vidibus-gem_template"` to the Gemfile of your application. Then call `bundle install` on your console.
+Add `gem 'vidibus-gem_template'` to the Gemfile of your application. Then call `bundle install` on your console.
 
 To utilize this gem template, just clone it into your new gem's directory by calling:
 

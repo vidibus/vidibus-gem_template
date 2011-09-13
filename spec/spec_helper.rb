@@ -1,15 +1,13 @@
+require 'rspec'
+require 'rr'
+require 'vidibus-gem_template'
 
-require "rubygems"
-require "rspec"
-require "rr"
-require "vidibus-gem_template"
-
-require "support/stubs"
-require "support/models"
+require 'support/stubs'
+require 'support/models'
 
 Mongoid.configure do |config|
-  name = "vidibus-gem_template_test"
-  host = "localhost"
+  name = 'vidibus-gem_template_test'
+  host = 'localhost'
   config.master = Mongo::Connection.new.db(name)
   config.logger = nil
 end

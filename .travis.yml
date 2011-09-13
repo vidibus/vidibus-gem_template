@@ -1,1 +1,1 @@
-script: "bundle exec rspec spec --format progress"
+script: 'bundle exec rspec spec --format progress'

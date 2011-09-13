@@ -12,13 +12,13 @@ module Vidibus
       # Class methods go here.
       module ClassMethods
         def species
-          "human"
+          'human'
         end
       end
       
       # Instance methods go here.
       def shout
-        "Yay!"
+        'Yay!'
       end
     end
   end

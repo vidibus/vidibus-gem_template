@@ -1,1 +1,1 @@
-require "vidibus/gem_template/mongoid"
+require 'vidibus/gem_template/mongoid'
