@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe Vidibus::GemTemplate::Mongoid do
-  let(:anna) {Model.new(:name => 'Anna')}
+  let(:anna) do
+    Model.new(:name => 'Anna')
+  end
 
   describe 'validation' do
     it 'should pass with valid attributes' do
