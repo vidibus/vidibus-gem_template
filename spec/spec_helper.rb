@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.start
+
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'rspec'
 require 'rr'
 require 'vidibus-gem_template'
