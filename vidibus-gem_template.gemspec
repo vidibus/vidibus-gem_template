@@ -17,13 +17,13 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'vidibus-gem_template'
 
-  s.add_dependency 'mongoid', '~> 2'
+  s.add_dependency 'mongoid'
 
   s.add_development_dependency 'bundler', '>= 1.0.0'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rdoc'
-  s.add_development_dependency 'rspec', '~> 2'
   s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'rspec'
   s.add_development_dependency 'rr'
 
   s.files = Dir.glob('{lib,app,config}/**/*') + %w[LICENSE README.md Rakefile]
