@@ -15,7 +15,7 @@ describe Vidibus::GemTemplate::Mongoid do
   end
 
   describe '#shout' do
-    it 'should return 'Yay!'' do
+    it 'should return "Yay!"' do
       anna.shout.should eql('Yay!')
     end
   end
