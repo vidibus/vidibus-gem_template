@@ -1,4 +1,4 @@
-# Vidibus::GemTemplate [![](http://travis-ci.org/vidibus/vidibus-gem_template.png)](http://travis-ci.org/vidibus/vidibus-gem_template) [![](http://stillmaintained.com/vidibus/vidibus-gem_template.png)](http://stillmaintained.com/vidibus/vidibus-gem_template)
+# Vidibus::GemTemplate [![](http://travis-ci.org/vidibus/vidibus-gem_template.png)](http://travis-ci.org/vidibus/vidibus-gem_template)
 
 **TODO:** This is a template for developing Vidibus gems. Adjust this file so it describes your gem well.
 
