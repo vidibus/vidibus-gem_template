@@ -32,10 +32,10 @@ TODO: Write a console tool to rename all files.
 
 ## Testing
 
-To test your gem, call `rspec spec` on your console. 
+To test your gem, call `rspec spec` on your console.
 To imitate the way Travis tests your gem, perform `bundle exec rspec spec --format progress`.
 
 
 ## Copyright
 
-&copy; 2011 Your Name. See LICENSE for details.
+&copy; 2012 Your Name. See LICENSE for details.
