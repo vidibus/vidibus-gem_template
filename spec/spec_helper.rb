@@ -7,8 +7,7 @@ require 'rspec'
 require 'rr'
 require 'vidibus-gem_template'
 
-require 'support/stubs'
-require 'support/models'
+Dir[File.expand_path('spec/support/**/*.rb')].each { |f| require f }
 
 Mongoid.configure do |config|
   name = 'vidibus-gem_template_test'
