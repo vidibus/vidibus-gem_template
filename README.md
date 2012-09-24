@@ -16,7 +16,12 @@ Add `gem 'vidibus-gem_template'` to the Gemfile of your application. Then call `
 To utilize this gem template, clone it into your new gem's directory by calling:
 
 ```
-git clone git@github.com:vidibus/vidibus-gem_template.git vidibus-my_cool_gem
+git clone --depth 1 git@github.com:vidibus/vidibus-gem_template.git vidibus-my_cool_gem
+cd vidibus-my_cool_gem
+sudo rm -r .git
+git init .
+git add .
+git commit -m "Import gem template"
 ```
 
 TODO: Write a console tool to rename all files.
