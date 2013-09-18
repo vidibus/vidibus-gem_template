@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.name        = 'vidibus-gem_template'
   s.version     = Vidibus::GemTemplate::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = 'TODO: Your Name'
-  s.email       = 'TODO your.name@vidibus.com'
+  s.authors     = 'Your Name'
+  s.email       = 'your.name@vidibus.com'
   s.homepage    = 'https://github.com/vidibus/vidibus-gem_template'
   s.summary     = 'TODO: Write a gem summary'
   s.description = 'TODO: Write a gem description'
