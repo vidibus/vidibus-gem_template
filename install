@@ -107,10 +107,11 @@ installer = 'install'
 tell "Renaming files"
 File.rename_r('.', old['file_name'], file_name)
 
-tell "Renaming modules"
+tell "Replacing file contents"
 File.recursive do |entry|
   unless entry == this_file
     File.gsub(entry, old['module_name'], module_name)
+    File.gsub(entry, old['file_name'], file_name)
   end
 end
 
