@@ -10,7 +10,7 @@ Bundler::GemHelper.install_tasks
 
 Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "vidibus-sysinfo #{Vidibus::GemTemplate::VERSION}"
+  rdoc.title = "vidibus-gem_template #{Vidibus::GemTemplate::VERSION}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
   rdoc.options << '--charset=utf-8'
