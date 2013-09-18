@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email       = 'your.name@vidibus.com'
   s.homepage    = 'https://github.com/vidibus/vidibus-gem_template'
   s.summary     = 'TODO: Write a gem summary'
-  s.description = 'TODO: Write a gem description'
+  s.description = s.summary
   s.license     = 'MIT'
 
   s.required_rubygems_version = '>= 1.3.6'
