@@ -21,8 +21,6 @@ cd vidibus-my_cool_gem
 ./install
 ```
 
-TODO: Write a console tool to rename all files.
-
 
 ## Usage
 
