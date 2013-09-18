@@ -43,4 +43,4 @@ To imitate the way Travis tests your gem, perform `bundle exec rspec spec --form
 
 ## Copyright
 
-&copy; 2012 Your Name. See LICENSE for details.
+&copy; 2013 Your Name. See LICENSE for details.
