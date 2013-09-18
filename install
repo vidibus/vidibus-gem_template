@@ -1,0 +1,144 @@
+#!/usr/bin/env ruby
+
+class String
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+
+  def red
+    colorize(31)
+  end
+
+  def green
+    colorize(32)
+  end
+
+  def yellow
+    colorize(33)
+  end
+
+  def pink
+    colorize(35)
+  end
+end
+
+class File
+  class << self
+    def recursive(path = '.', &block)
+      entries = Dir["#{path}/**"]
+      entries.each do |entry|
+        block.call(entry)
+        recursive(entry, &block)
+      end
+    end
+
+    def rename_r(path, old_name, new_name)
+      recursive(path) do |entry|
+        if entry.match(old_name)
+          old_entry = entry.dup
+          entry.gsub!(old_name, new_name)
+          puts "#{old_entry}: Renaming to '#{entry}'".yellow
+          File.rename(old_entry, entry)
+        end
+        rename_r(entry, old_name, new_name)
+      end
+    end
+
+    def gsub(path, pattern, replacement)
+      return unless file?(path)
+      content = File.read(path)
+      return unless content.match(pattern)
+      puts "#{path}: Replacing '#{pattern}' by '#{replacement}'".yellow
+      File.open(path, 'w') do |file|
+        file.write content.gsub(pattern, replacement)
+      end
+    end
+  end
+end
+
+def tell(msg)
+  puts "# #{msg}".green
+end
+
+def fail(msg)
+  puts msg.red
+  puts 'Exiting now'.pink
+  exit
+end
+
+def run(*args)
+  cmd = args.pop
+  skip = !!args.first
+  if skip
+    puts "Skip: #{cmd.yellow}"
+  else
+    puts(cmd.yellow)
+    if dir = cmd[/^cd (.+)/, 1]
+      Dir.chdir(dir)
+    else
+      out = %x(#{cmd})
+      puts(out)
+      unless $?.exitstatus == 0
+        fail "Last command failed: #{cmd}"
+      end
+      out.gsub(/\n$/, '')
+    end
+  end
+end
+
+old = {
+  'file_name' => 'gem_template',
+  'module_name' => 'GemTemplate',
+  'name' => 'Your Name',
+  'email' => 'your.name@vidibus.com'
+}
+
+entries = Dir["./**"]
+this_file = __FILE__
+parent_folder = File.basename(File.expand_path('.'))
+file_name = parent_folder[/vidibus-(.+)/, 1]
+module_name = file_name.split('_').collect(&:capitalize).join
+
+readme = 'README.md'
+gemspec = "vidibus-#{file_name}.gemspec"
+installer = 'install'
+
+
+tell "Renaming files"
+File.rename_r('.', old['file_name'], file_name)
+
+tell "Renaming modules"
+File.recursive do |entry|
+  unless entry == this_file
+    File.gsub(entry, old['module_name'], module_name)
+  end
+end
+
+%w[name email].each do |prop|
+  tell "Setting your user #{prop}"
+  value = run("git config user.#{prop}")
+  unless value == ''
+    old_value = old[prop]
+    File.recursive do |entry|
+      unless entry == this_file
+        File.gsub(entry, old_value, value)
+      end
+    end
+  end
+end
+
+tell "Setting up git"
+run 'rm -rf .git'
+run 'git init .'
+run 'git add .'
+[readme, gemspec, installer].each do |excluded|
+  run "git rm --cached #{excluded}"
+end
+run 'git commit -m "Set up gem structure"'
+
+tell 'Done!'
+
+tell 'Now edit and commit these files:'
+[readme, gemspec].each do |excluded|
+  tell "\t#{excluded}"
+end
